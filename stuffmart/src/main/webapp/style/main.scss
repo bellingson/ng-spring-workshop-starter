@@ -1,0 +1,134 @@
+
+$eighteen-px: 1.125em;
+$thirty-px: 1.875em;
+
+$orange: #FFAC1D;
+$dark-blue: #0c4f93;
+$light-blue: #228AF4;
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+body {
+  background: #fff;
+  color: #333;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+}
+
+a:hover { text-decoration: none; }
+
+h1, h2, h3 { color: $dark-blue; }
+
+div.top-bar {
+    background: $light-blue;
+    color: #fff;
+
+    div.home {
+      font-size: 28px;
+      span { font-size: 24px; }
+      a {  color: #fff; }
+    }
+
+    nav {
+      font-size: 16px;
+
+      a {
+        color: #fff;
+        display: inline-block;
+        padding: 10px 15px;
+      }
+      a:hover {
+        color: $orange;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        display: inline-block;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+    }
+
+    #logout-form { display: none; }
+}
+
+div.admin-nav {
+  background: #f1f1f1;
+  border-bottom: 1px dotted #999;
+  ul {
+    margin: 0;
+    padding: 5px 0;
+    list-style: none;
+    li { display: inline; }
+  }
+
+}
+
+
+
+
+
+div.layer {
+    padding: 40px 0;
+}
+
+div.page-body {
+  min-height: 800px;
+}
+
+div.product-list {
+
+  div.product {
+      padding: 10px 15px;
+      margin-bottom: 30px;
+      border: 1px solid #999;
+      border-radius: 8px;
+      background: #f1f1f1;
+      h3 { font-size: $eighteen-px; margin: 0 0 10px 0;  }
+
+      a.img-wrapper {
+          display: block;
+          width: 100%;
+          img { width: 100%; border: 1px solid #999;}
+      }
+
+  }
+
+}
+
+
+div.product-view {
+
+  min-height: 800px;
+
+  div.img-wrapper {
+     margin-bottom: 30px;
+     img {
+       border: 1px solid #999;
+     }
+  }
+
+
+
+}
+
+
+div.login-page {
+   h1 { margin-bottom: 30px; }
+}
+
+
+footer {
+   height: 200px;
+   padding: 30px;
+   text-align: center;
+   width: 100%;
+   background: $dark-blue;
+   color: #fff;
+}
