@@ -36,7 +36,7 @@ gulp.task('watch', function () {
 
 var execV = require('exec-with-verify');
 
-var ng2Apps = [ { src: 'src/main/js/product-mgr', dest: '/admin/product/app', baseHref: '/admin/product/' } ];
+var ng2Apps = [ { src: 'src/main/js/product-mgr', dest: '/admin/product/app' } ];
 
 var ngBuildPath = '../../../../build/inplaceWebapp';
 
@@ -59,14 +59,13 @@ gulp.task('ng:dist', [ 'ng:install'], function() {
 
 function buildNgApps(isProd) {
 
-    // ng build --prod --output-path=../../../../build/inplaceWebapp/admin/product/app --base-href=/admin/product/;
+    // ng build --prod --output-path=../../../../build/inplaceWebapp/admin/product/app
 
     var execConfig = ng2Apps.map(function(app) {
 
         var outputPath = ' --output-path=' +  ngBuildPath + app.dest;
-        var baseHref=' --base-href=' + app.baseHref;
 
-        var cmd = 'ng build' + (isProd ? ' --prod ' : ' ') + outputPath + baseHref;
+        var cmd = 'ng build ' + (isProd ? ' --prod ' : ' ') + outputPath;
         return { cmd: cmd, cwd: app.src };
     });
 
@@ -76,4 +75,5 @@ function buildNgApps(isProd) {
 /* all */
 
 // gulp.task('default', [ 'copyapp', 'ng:dist' ], function() { });
+// gulp.task('default', [ 'copyapp', 'ng:build' ], function() { });
 gulp.task('default', [ 'copyapp' ], function() { });
