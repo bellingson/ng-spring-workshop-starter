@@ -59,5 +59,30 @@ http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.h
     
     
 
+## Browser
+
+Chrome Browser is prefered  
+    
+## IDE Recommendations 
+
+IntelliJ Ultimate and Visual Studio Code seem to have the best Angular 2 support at this time.  Both offer code completion and automatic imports.  The workshop instructor will use IntelliJ Ultimate, but you are free to use another IDE that you are comfortable with.
+
+- IntelliJ Ultimate Edition (not free)
+
+    https://www.jetbrains.com/idea/#chooseYourEdition
+    
+    Also install Angular JS plugin
+    https://plugins.jetbrains.com/plugin/6971?pr=phpStorm
+    
+- IntelliJ Community Edition (free) is good too, but lacks JavaScript code completion   
+    
+- Visual Studio Code
+
+    https://code.visualstudio.com/
+
+Also recommend installing an Emmet plugin for any IDE you use.
+
+    http://emmet.io/
+
 
 

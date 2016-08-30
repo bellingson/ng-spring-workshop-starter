@@ -36,7 +36,9 @@ gulp.task('watch', function () {
 
 var execV = require('exec-with-verify');
 
-var ng2Apps = [ 'src/main/js/product-mgr' ];
+var ng2Apps = [ { src: 'src/main/js/product-mgr', dest: '/admin/product/app', baseHref: '/admin/product/' } ];
+
+var ngBuildPath = '../../../../build/inplaceWebapp';
 
 gulp.task('ng:install', function() {
 
@@ -57,10 +59,15 @@ gulp.task('ng:dist', [ 'ng:install'], function() {
 
 function buildNgApps(isProd) {
 
-    var cmd = 'ng build' + (isProd ? ' --prod' : '');
+    // ng build --prod --output-path=../../../../build/inplaceWebapp/admin/product/app --base-href=/admin/product/;
 
     var execConfig = ng2Apps.map(function(app) {
-        return { cmd: cmd, cwd: app, successString: 'Built project successfully'}
+
+        var outputPath = ' --output-path=' +  ngBuildPath + app.dest;
+        var baseHref=' --base-href=' + app.baseHref;
+
+        var cmd = 'ng build' + (isProd ? ' --prod ' : ' ') + outputPath + baseHref;
+        return { cmd: cmd, cwd: app.src };
     });
 
     return execV.execWithVerify(execConfig);

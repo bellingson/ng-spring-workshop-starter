@@ -34,7 +34,7 @@ class MvcConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/style/**").addResourceLocations("/style/")
         registry.addResourceHandler("/script/**").addResourceLocations("/script/")
         registry.addResourceHandler("/image/**").addResourceLocations("/image/")
-        registry.addResourceHandler("/admin/product/**").addResourceLocations("/admin/product/")
+        registry.addResourceHandler("/admin/product/app/**").addResourceLocations("/admin/product/app/")
     }
 
 
