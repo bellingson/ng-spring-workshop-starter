@@ -1,4 +1,4 @@
-# NG with Spring MVC - Workshop Starter
+# Angular 2 with Spring MVC - Workshop Starter
 angular 2 with spring mvc starter app
 
 1) Install Latest Node - v6.5.0 Current Branch
