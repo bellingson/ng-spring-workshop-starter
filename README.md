@@ -3,10 +3,10 @@ angular 2 with spring mvc starter app
 
 1) Install Latest Node - v6.5.0 Current Branch
 
-OS X: https://nodejs.org/dist/v6.5.0/node-v6.5.0.pkg
-Windows: https://nodejs.org/dist/v6.5.0/win-x64/node.exe
-Linux: https://nodejs.org/dist/v6.5.0/node-v6.5.0-linux-x64.tar.xz
-Other: https://nodejs.org/en/
+    OS X: https://nodejs.org/dist/v6.5.0/node-v6.5.0.pkg
+    Windows: https://nodejs.org/dist/v6.5.0/win-x64/node.exe
+    Linux: https://nodejs.org/dist/v6.5.0/node-v6.5.0-linux-x64.tar.xz
+    Other: https://nodejs.org/en/
 
 2) Install Gulp
 
