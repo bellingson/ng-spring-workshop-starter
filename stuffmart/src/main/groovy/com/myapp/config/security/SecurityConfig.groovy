@@ -70,7 +70,7 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .httpStrictTransportSecurity()
                 .disable()
 
-
+        http.csrf().disable()
 
     }
 

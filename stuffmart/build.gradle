@@ -62,7 +62,11 @@ task gulp(type: Exec) {
 
     workingDir '.'
 
-    executable 'gulp'
+    if (System.getProperty('os.name').toLowerCase().contains('windows')) {
+        commandLine 'cmd', '/c', 'gulp'
+    } else {
+        commandLine 'gulp'
+    }
 
     standardOutput = System.out
     errorOutput = System.out
