@@ -57,9 +57,19 @@ gulp.task('ng:buildProd', [ 'ng:install'], function() {
     return buildNgApps(true);
 });
 
-function buildNgApps(isProd) {
+gulp.task('ng:dist', ['ng:buildProd'], function() {
 
-    // ng build --prod --output-path=../../../../build/inplaceWebapp/admin/product/app
+    _.each(ng2Apps, writeScriptJsp);
+
+});
+
+/*
+ *  exec build via angular-cli
+ *  ng build --prod --output-path=../../../../build/inplaceWebapp/admin/product/app
+ *
+ */
+
+function buildNgApps(isProd) {
 
     var execConfig = ng2Apps.map(function(app) {
 
@@ -72,28 +82,25 @@ function buildNgApps(isProd) {
     return execV.execWithVerify(execConfig);
 }
 
-gulp.task('ng:dist', ['ng:buildProd'], function() {
+/*
+*  writes script.jsp file with HTML script tags to point to app scripts
+*/
 
-    _.each(ng2Apps, writeScriptJsp);
+function writeScriptJsp(app) {
 
-    function writeScriptJsp(app) {
+    var appDir = buildWebappDir + app.dest;
 
-        var appDir = buildWebappDir + app.dest;
+    var files = fs.readdirSync(appDir);
 
-        var files = fs.readdirSync(appDir);
+    var scriptTags = _(files)
+        .filter(function(file) { return _.endsWith(file, '.js'); })
+        .map(function (file) {
+            return '<script src="app/' + file + '"></script>';
+        }).join('\n');
 
-        var scriptTags = _(files)
-            .filter(function(file) { return _.endsWith(file, '.js'); })
-            .map(function (file) {
-                return '<script src="app/' + file + '"></script>';
-            }).join('\n');
-
-        var scriptsFile = appDir + '/scripts.jsp';
-        fs.writeFileSync(scriptsFile, scriptTags);
-    }
-
-});
-
+    var scriptsFile = appDir + '/scripts.jsp';
+    fs.writeFileSync(scriptsFile, scriptTags);
+}
 
 /* all */
 
