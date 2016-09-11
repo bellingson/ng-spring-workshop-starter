@@ -38,7 +38,7 @@ var execV = require('exec-with-verify');
 
 var ng2Apps = [ { src: 'src/main/js/product-mgr', dest: '/admin/product/app' } ];
 
-var ngBuildPath = '../../../../build/inplaceWebapp';
+var ngBuildPath = '../../../../' + buildWebappDir;
 
 gulp.task('ng:install', function() {
 
@@ -78,9 +78,9 @@ gulp.task('ng:dist', ['ng:buildProd'], function() {
 
     function writeScriptJsp(app) {
 
-        var dir = 'build/inplaceWebapp' + app.dest;
+        var appDir = buildWebappDir + app.dest;
 
-        var files = fs.readdirSync(dir);
+        var files = fs.readdirSync(appDir);
 
         var scriptTags = _(files)
             .filter(function(file) { return _.endsWith(file, '.js'); })
@@ -88,7 +88,7 @@ gulp.task('ng:dist', ['ng:buildProd'], function() {
                 return '<script src="app/' + file + '"></script>';
             }).join('\n');
 
-        var scriptsFile = dir + '/scripts.jsp';
+        var scriptsFile = appDir + '/scripts.jsp';
         fs.writeFileSync(scriptsFile, scriptTags);
     }
 
