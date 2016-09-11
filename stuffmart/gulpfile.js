@@ -53,7 +53,7 @@ gulp.task('ng:build', function() {
     return buildNgApps(false);
 });
 
-gulp.task('ng:dist', [ 'ng:install'], function() {
+gulp.task('ng:buildProd', [ 'ng:install'], function() {
     return buildNgApps(true);
 });
 
@@ -72,8 +72,31 @@ function buildNgApps(isProd) {
     return execV.execWithVerify(execConfig);
 }
 
+gulp.task('ng:dist', ['ng:buildProd'], function() {
+
+    _.each(ng2Apps, writeScriptJsp);
+
+    function writeScriptJsp(app) {
+
+        var dir = 'build/inplaceWebapp' + app.dest;
+
+        var files = fs.readdirSync(dir);
+
+        var scriptTags = _(files)
+            .filter(function(file) { return _.endsWith(file, '.js'); })
+            .map(function (file) {
+                return '<script src="app/' + file + '"></script>';
+            }).join('\n');
+
+        var scriptsFile = dir + '/scripts.jsp';
+        fs.writeFileSync(scriptsFile, scriptTags);
+    }
+
+});
+
+
 /* all */
 
+gulp.task('default', [ 'copyapp' ], function() { });
 // gulp.task('default', [ 'copyapp', 'ng:dist' ], function() { });
 // gulp.task('default', [ 'copyapp', 'ng:build' ], function() { });
-gulp.task('default', [ 'copyapp' ], function() { });

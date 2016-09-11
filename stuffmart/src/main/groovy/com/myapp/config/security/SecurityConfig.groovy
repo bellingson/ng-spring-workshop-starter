@@ -39,7 +39,6 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http.authorizeRequests()
-//                .antMatchers('/image/**','/script/**','/style/**').permitAll()
                 .antMatchers('/').permitAll()
 
         // admin
@@ -61,7 +60,6 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .logout()
-//                    .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .logoutUrl('/logout')
                 .logoutSuccessUrl('/')
                 .invalidateHttpSession(true)
