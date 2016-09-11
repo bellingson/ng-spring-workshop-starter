@@ -51,7 +51,7 @@ gulp.task('ng:install', function() {
     return execV.execWithVerify(configs);
 });
 
-gulp.task('ng:build', function() {
+gulp.task('ng:buildDev', function() {
     return buildNgApps(false);
 });
 
@@ -59,7 +59,13 @@ gulp.task('ng:buildProd', [ 'ng:install'], function() {
     return buildNgApps(true);
 });
 
-gulp.task('ng:dist', ['ng:buildProd'], function() {
+gulp.task('ng:distProd', ['ng:buildProd'], function() {
+
+    _.each(ng2Apps, writeScriptJsp);
+
+});
+
+gulp.task('ng:distDev', ['ng:buildDev'], function() {
 
     _.each(ng2Apps, writeScriptJsp);
 
@@ -71,13 +77,13 @@ gulp.task('ng:dist', ['ng:buildProd'], function() {
  *
  */
 
-function buildNgApps(isProd) {
+function buildNgApps(isProd, watch) {
 
     var execConfig = ng2Apps.map(function(app) {
 
         var outputPath = ' --output-path=' +  ngBuildPath + app.dest;
 
-        var cmd = 'ng build ' + (isProd ? ' --prod ' : ' ') + outputPath;
+        var cmd = 'ng build ' + (isProd ? ' --prod ' : ' ') + (watch ? ' --watch ':'') + outputPath;
         return { cmd: cmd, cwd: app.src };
     });
 
@@ -85,12 +91,13 @@ function buildNgApps(isProd) {
 }
 
 /*
-*  writes script.jsp file with HTML script tags to point to app scripts
-*/
+ *  writes script.jsp file with HTML script tags to point to app scripts
+ */
 
 function writeScriptJsp(app) {
 
     var appDir = buildWebappDir + app.dest;
+    var parentDir = appDir.substr(0,appDir.lastIndexOf('/'));
 
     var files = fs.readdirSync(appDir);
 
@@ -100,12 +107,12 @@ function writeScriptJsp(app) {
             return '<script src="app/' + file + '"></script>';
         }).join('\n');
 
-    var scriptsFile = appDir + '/scripts.jsp';
+    var scriptsFile = parentDir + '/scripts.jsp';
     fs.writeFileSync(scriptsFile, scriptTags);
 }
 
 /* all */
 
-gulp.task('default', [ 'copyapp' ], function() { });
-// gulp.task('default', [ 'copyapp', 'ng:dist' ], function() { });
-// gulp.task('default', [ 'copyapp', 'ng:build' ], function() { });
+// gulp.task('default', [ 'copyapp' ], function() { });
+// gulp.task('default', [ 'copyapp', 'ng:distProd' ], function() { });
+gulp.task('default', [ 'copyapp', 'ng:distDev' ], function() { });
