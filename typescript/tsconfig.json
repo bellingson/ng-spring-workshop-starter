@@ -3,7 +3,6 @@
     "target": "es5"
   },
   "files": [
-    "main.ts",
-    "fatarrow.ts"
+    "main.ts"
   ]
 }
