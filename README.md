@@ -16,9 +16,9 @@ angular 2 with spring mvc starter app
 
     npm install -g typescript typings
 
-4) Install Angular CLI (webpack branch)
+4) Install Angular CLI
 
-    npm install -g angular-cli@webpack
+    npm install -g angular-cli
     
 5) Install Java 8
 
@@ -41,7 +41,7 @@ http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.h
 
     ng -v
     
-    should print angular-cli: 1.0.0-beta.11-webpack.8 (or higher)
+    should print angular-cli: 1.0.0-beta.14 (or higher)
     
     cd ng-workshop-starter/product-mgr
     ng serve
