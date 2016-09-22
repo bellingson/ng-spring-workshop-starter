@@ -113,6 +113,6 @@ function writeScriptJsp(app) {
 
 /* all */
 
-// gulp.task('default', [ 'copyapp' ], function() { });
+gulp.task('default', [ 'copyapp' ], function() { });
 // gulp.task('default', [ 'copyapp', 'ng:distProd' ], function() { });
-gulp.task('default', [ 'copyapp', 'ng:distDev' ], function() { });
+// gulp.task('default', [ 'copyapp', 'ng:distDev' ], function() { });
