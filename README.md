@@ -41,7 +41,7 @@ http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.h
 
     ng -v
     
-    should print angular-cli: 1.0.0-beta.14 (or higher)
+    should print angular-cli: 1.0.0-beta.15 (or higher)
     
     cd ng-workshop-starter/product-mgr
     ng serve
