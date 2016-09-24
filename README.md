@@ -51,8 +51,13 @@ http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.h
 
 9) Test Spring MVC App
 
+    on mac and linux:
     cd ng-workshop-starter/stuffmart
     ./gradlew appRun
+
+    on windows:
+    cd ng-workshop-starter/stuffmart
+    ./gradlew.bat appRun
     
     go to http://localhost:8080/ in browser
     should load "Stuff Mart" website
