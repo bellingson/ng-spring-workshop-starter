@@ -11,6 +11,12 @@ angular 2 with spring mvc starter app
 2) Install Angular CLI, Gulp, and TypeScript
 
     npm install -g angular-cli gulp typescript
+	
+If you need uninstall an older angular-cli version:
+	
+		npm uninstall -g angular-cli 
+		npm cache clear
+	
     
 3) Install Java 8
 
@@ -18,7 +24,7 @@ http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.h
 
 4) Clone Workshop Repo
 
-    git clone https://github.com/bellingson/ng-workshop-starter.git
+    git clone git@github.com:bellingson/ng-workshop-starter.git
 
 5) Install npm dependencies
 
