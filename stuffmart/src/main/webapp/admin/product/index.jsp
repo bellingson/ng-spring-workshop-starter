@@ -15,8 +15,9 @@
     <app-root>Loading...</app-root>
 </div>
 
-<%@ include file="scripts.jsp" %>
-
+<script type="text/javascript" src="app/inline.js"></script>
+<script type="text/javascript" src="app/styles.bundle.js"></script>
+<script type="text/javascript" src="app/main.bundle.js"></script>
 
 </body>
 </html>
