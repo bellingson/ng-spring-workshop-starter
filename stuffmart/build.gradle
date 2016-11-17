@@ -83,8 +83,16 @@ task buildng(type: Exec) {
         commandLine 'ng', 'build'
     }
 
-    standardOutput = System.out
-    errorOutput = System.out
+    //store the output instead of printing to the console:
+    standardOutput = new ByteArrayOutputStream()
+
+    //extension method stopTomcat.output() can be used to obtain the output:
+    ext.output = {
+        return standardOutput.toString()
+    }
+
+//    standardOutput = System.out
+//    errorOutput = System.out
 
 }
 
