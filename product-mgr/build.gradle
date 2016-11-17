@@ -1,0 +1,14 @@
+
+idea {
+
+    module {
+        inheritOutputDirs = false
+        excludeDirs = [
+                file(".gradle"),
+                file("node_modules"),
+                file("dist"),
+                file("coverage")
+        ]
+    }
+
+}

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd product-mgr
+ng build --watch

@@ -30,7 +30,6 @@ class MvcConfig extends WebMvcConfigurerAdapter {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/admin/pmgr/**").addResourceLocations("/admin/pmgr/")
         registry.addResourceHandler("/style/**").addResourceLocations("/style/")
         registry.addResourceHandler("/script/**").addResourceLocations("/script/")
         registry.addResourceHandler("/image/**").addResourceLocations("/image/")

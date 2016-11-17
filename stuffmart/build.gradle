@@ -73,7 +73,22 @@ task gulp(type: Exec) {
 
 }
 
-processResources.dependsOn gulp
+task buildng(type: Exec) {
+
+    workingDir '../product-mgr'
+
+    if (System.getProperty('os.name').toLowerCase().contains('windows')) {
+        commandLine 'cmd', '/c', 'ng', 'build'
+    } else {
+        commandLine 'ng', 'build'
+    }
+
+    standardOutput = System.out
+    errorOutput = System.out
+
+}
+
+processResources.dependsOn gulp, buildng
 
 
 gretty {

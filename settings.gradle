@@ -1,0 +1,3 @@
+rootProject.name = 'ngstuff'
+
+include 'product-mgr','stuffmart','typescript'

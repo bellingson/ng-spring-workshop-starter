@@ -9,8 +9,8 @@
     <wildcardResourcePatterns>
       <entry name="!?*.class" />
       <entry name="!?*.scala" />
-      <entry name="!?*.groovy" />
       <entry name="!?*.java" />
+      <entry name="!?*.groovy" />
     </wildcardResourcePatterns>
     <annotationProcessing>
       <profile default="true" name="Default" enabled="false">
@@ -53,7 +53,10 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/stuffmart.iml" filepath="$PROJECT_DIR$/stuffmart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ngstuff.iml" filepath="$PROJECT_DIR$/ngstuff.iml" />
+      <module fileurl="file://$PROJECT_DIR$/product-mgr/product-mgr.iml" filepath="$PROJECT_DIR$/product-mgr/product-mgr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stuffmart/stuffmart.iml" filepath="$PROJECT_DIR$/stuffmart/stuffmart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/typescript/typescript.iml" filepath="$PROJECT_DIR$/typescript/typescript.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
@@ -61,6 +64,9 @@
   </component>
   <component name="SvnBranchConfigurationManager">
     <option name="mySupportsUserInfoFilter" value="true" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
   <component name="masterDetails">
     <states>
