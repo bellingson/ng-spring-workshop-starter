@@ -22,6 +22,14 @@ If you need uninstall an older angular-cli version:
 
 http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
+Make sure the Java 8 JDK is your default java version on the system.
+
+	java -version
+	java version "1.8.0_101"
+
+Check your JAVA_HOME environment variable.  Make sure it is set to the Java 8 JDK.
+
+
 4) Clone Workshop Repo
 
     git clone git@github.com:bellingson/ng-workshop-starter.git
@@ -39,7 +47,7 @@ http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.h
 
     ng -v
     
-    should print angular-cli: 1.0.0-beta.19-3 (or higher)
+    should print angular-cli: 1.0.0-beta.20-4 (or higher)
     
     cd ng-workshop-starter/product-mgr
     ng serve
@@ -49,11 +57,13 @@ http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.h
 
 7) Test Spring MVC App
 
-    on mac and linux:
+On mac and linux:
+ 
     cd ng-workshop-starter/stuffmart
     ./gradlew appRun
 
-    on windows:
+On windows:
+	
     cd ng-workshop-starter/stuffmart
     ./gradlew.bat appRun
     
