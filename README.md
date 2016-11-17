@@ -70,7 +70,7 @@ On windows:
     go to http://localhost:8080/ in browser
     should load "Stuff Mart" website
     
-    
+If you have difficulty running the Spring MVC app, verify that your java version and JAVA_HOME are correct.  JDK 8 is required.
 
 ## Browser
 
