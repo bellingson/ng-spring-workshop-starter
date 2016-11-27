@@ -59,12 +59,12 @@ Check your JAVA_HOME environment variable.  Make sure it is set to the Java 8 JD
 
 On mac and linux:
  
-    cd ng-workshop-starter/stuffmart
+    cd ng-workshop-starter
     ./gradlew appRun
 
 On windows:
 	
-    cd ng-workshop-starter/stuffmart
+    cd ng-workshop-starter
     ./gradlew.bat appRun
     
     go to http://localhost:8080/ in browser
